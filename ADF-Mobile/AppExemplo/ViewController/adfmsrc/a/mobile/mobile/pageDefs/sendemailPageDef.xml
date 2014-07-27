@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="sendemailPageDef"
+                Package="a.mobile.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="sendEmail_subject" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="sendEmail_body" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="sendEmail" RequiresUpdateModel="true" Action="invokeMethod" MethodName="sendEmail"
+                  IsViewObjectMethod="false" DataControl="DeviceFeatures"
+                  InstanceName="data.DeviceFeatures.dataProvider">
+      <NamedData NDName="to" NDType="java.lang.String" NDValue="#{pageFlowScope.email}"/>
+      <NamedData NDName="cc" NDType="java.lang.String"/>
+      <NamedData NDName="subject" NDType="java.lang.String" NDValue="${bindings.sendEmail_subject}"/>
+      <NamedData NDName="body" NDType="java.lang.String" NDValue="${bindings.sendEmail_body}"/>
+      <NamedData NDName="bcc" NDType="java.lang.String"/>
+      <NamedData NDName="attachments" NDType="java.lang.String"/>
+      <NamedData NDName="mimeTypes" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="subject">
+      <AttrNames>
+        <Item Value="sendEmail_subject"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="body">
+      <AttrNames>
+        <Item Value="sendEmail_body"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

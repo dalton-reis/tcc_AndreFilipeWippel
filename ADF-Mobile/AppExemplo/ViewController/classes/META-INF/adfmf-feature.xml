@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="a.mobile.Email" name="Email">
+    <adfmf:content id="a.mobile.Email.1">
+      <adfmf:amx file="a.mobile.Email/emailFlow.xml#emailFlow"/>
+    </adfmf:content>
+  </adfmf:feature>
+</adfmf:features>

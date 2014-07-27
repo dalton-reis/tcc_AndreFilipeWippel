@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Send Email to #{pageFlowScope.email}" id="ot1"/>
+    </amx:facet>
+    <amx:panelFormLayout id="pfl1">
+      <amx:inputText value="#{bindings.subject.inputValue}" label="#{bindings.subject.hints.label}" id="it2"/>
+      <amx:inputText value="#{bindings.body.inputValue}" label="#{bindings.body.hints.label}" id="it1"/>
+    </amx:panelFormLayout>
+    <amx:commandButton actionListener="#{bindings.sendEmail.execute}" text="Send"
+                       disabled="#{!bindings.sendEmail.enabled}" id="cb1" action="back"/>
+  </amx:panelPage>
+</amx:view>

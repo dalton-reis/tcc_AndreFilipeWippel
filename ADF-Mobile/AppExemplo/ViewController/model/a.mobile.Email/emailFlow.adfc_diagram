@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">empList</property>
+      <property
+         name="page">/empList.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>empList&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">164.94824</property>
+      <property
+         name="x">181.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">sendemail</property>
+      <property
+         name="page">/sendemail.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>sendemail&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">263.29883</property>
+      <property
+         name="x">507.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">go</property>
+      <property
+         name="sdm:polyPoints">R46,223.3577,161.09766,466.0,259.44824,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">L54,464.6388,266.44824,222.0,168.09766,R54</property>
+   </ControlFlowCase>
+</SDM>

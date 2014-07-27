@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="a.mobile.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/empList.amx" usageId="a_mobile_mobile_empListPageDef"/>
+    <page path="/sendemail.amx" usageId="a_mobile_mobile_sendemailPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="a_mobile_mobile_empListPageDef" path="a.mobile.mobile.pageDefs.empListPageDef"/>
+    <page id="a_mobile_mobile_sendemailPageDef" path="a.mobile.mobile.pageDefs.sendemailPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="DeviceFeatures" path="a.mobile.application.DeviceFeatures"/>
+    <dc id="Emps" path="a.mobile.mobile.Emps"/>
+  </dataControlUsages>
+</Application>
