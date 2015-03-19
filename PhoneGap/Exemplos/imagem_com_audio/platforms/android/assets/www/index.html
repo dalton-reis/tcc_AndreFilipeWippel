@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+				  
+<html>    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" href="css/jquery.mobile-1.1.2.min.css" />
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/jquery.mobile-1.1.2.min.js"></script>
+        <title>Teste Audio</title>
+    </head>
+	<body>
+        <div id="container1">
+             <img name="play" src="img/play.png" width="100" height="100" border="0" id="play" alt="" class="play" />
+        </div>
+        <div id="container2">
+             <img name="pause" src="img/pause.png" width="100" height="100" border="0" id="pause" alt="" class="pause" />
+        </div>
+    </body>
+</html>
+
+<script>
+        $(document).ready(function() {
+            var audioElement = document.createElement('audio');
+            audioElement.setAttribute('src', 'audio/musica.mp3');
+            //audioElement.setAttribute('autoplay', 'autoplay');
+            //audioElement.load()
+
+            $.get();
+
+            audioElement.addEventListener("load", function() {
+                audioElement.play();
+            }, true);
+
+            $('.play').click(function() {
+                audioElement.play();
+            });
+
+            $('.pause').click(function() {
+                audioElement.pause();
+            });
+        });
+</script>
