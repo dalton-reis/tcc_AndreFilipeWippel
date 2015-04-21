@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Tagarela</title>
+    
+    <link href="css/jquery.mobile-1.1.2.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/foundation.css" />
+	<link href="css/app.css" rel="stylesheet" type="text/css" media="screen">
+    
+    <script type="text/javascript" src="js/jquery.mobile-1.1.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/vendor/modernizr.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            var audioElement = document.createElement('audio');
+            audioElement.setAttribute('src', 'audio/musica.mp3');
+            $.get();
+            $('.play').click(function() {
+                audioElement.play();
+            });
+        });
+	</script>
+</head>
+
+<body>
+	<div class="wrapper row">
+		<div class="navegacao small-1 columns">
+			<div class="voltar-only row">
+				<a href="javascript:window.history.go(-1)"><img src="img/voltar.png" alt="voltar" /></a>
+			</div>
+		</div>
+		
+		<!-- Mostrar os simbolos (3x3) viculados a prancha selecionada -->
+		<div class="lista-itens small-11 columns">
+			<div class="prancha small-9 columns small-centered">
+				<ul class="small-block-grid-3">
+					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
+					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
+					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
+					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
+					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
+					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
+					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
+					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
+					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
+				</ul>
+			</div>
+		</div>
+    </div>
+    
+    <script src="js/vendor/jquery.js"></script>
+	<script src="js/foundation.min.js"></script>
+    <script>
+    	$(document).foundation();
+    </script>
+</body>
+
+</html>
