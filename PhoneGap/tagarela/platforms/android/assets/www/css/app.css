@@ -13,8 +13,8 @@
 
 /* Area de controle */
 .area-controle { overflow:auto; height:100%; }
-.area-controle .foto { height:50%; }
-.area-controle .funcoes { height:50%; }
+.area-controle .foto { height:40%; }
+.area-controle .funcoes { height:60%; }
 
 /* Area de transicao */
 .area-transicao { border-left:5px #669999 double; overflow:auto; height:100%; }

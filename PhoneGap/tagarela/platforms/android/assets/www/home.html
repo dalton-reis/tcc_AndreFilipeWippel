@@ -21,7 +21,7 @@
 	<div class="wrapper row">
     	<div class="navegacao small-1 columns">
 			<div class="voltar-only row">
-				<a href="javascript:window.history.go(-1)"><img src="img/voltar.png" alt="voltar" /></a>
+				<a href="javascript:window.history.go(-1)"><img src="img/voltar.png" alt="" /></a>
 			</div>
 		</div>
     	
@@ -30,14 +30,14 @@
 				<div class="small-6 columns">
 					<!-- Mostrar a foto do especialista, tutor ou paciente -->
 					<!-- Ao clicar nela deve mostrar uma tela com seus dados -->
-					<a href="#" data-reveal-id="info"><img src="img/foto.png" alt="foto" class="left" /></a>
+					<a href="#" data-reveal-id="info" class="foto-img"></a>
 					
 					<div id="info" class="reveal-modal tiny" data-reveal role="dialog">
 						<h3>Informações Pessoais</h3><hr>
-  					  	<p><b>Nome:</b> ------------------------------</p>
-					  	<p><b>E-Mail:</b> ------------------------------</p>
-					  	<p><b>Telefone:</b> ------------------------------</p>
-					  	<a href="#" data-reveal-id="alterar-info" class="button radius">Alterar</a>
+  					  	<p class="info-nome"></p>
+					  	<p class="info-email"></p>
+					  	<p class="info-tel"></p>
+					  	<a href="#" data-reveal-id="alterar-info" class="buton-alterar button radius">Alterar</a>
 					  	<a class="close-reveal-modal" aria-label="fechar">&#215;</a>
 					</div>
 					<div id="alterar-info" class="reveal-modal tiny" data-reveal role="dialog">
@@ -45,22 +45,22 @@
   						<form>
 							<div class="row">
     							<div class="small-12 small-centered columns">
-    						  		<label><b>Nome</b><input type="text" placeholder="Insira o nome" /></label>
+    						  		<label><b>Nome</b><input type="text" placeholder="Insira o nome" class="input-nome" /></label>
     							</div>
   							</div>
   							<div class="row">
     							<div class="small-12 small-centered columns">
-    						  		<label><b>E-Mail</b><input type="text" placeholder="exemplo@exemplo.com" /></label>
+    						  		<label><b>E-Mail</b><input type="text" placeholder="exemplo@exemplo.com" class="input-email" /></label>
     							</div>
   							</div>
   							<div class="row">
     							<div class="small-12 small-centered columns">
-    						  		<label><b>Telefone</b><input type="text" placeholder="(47) 9999-9999" /></label>
+    						  		<label><b>Telefone</b><input type="text" placeholder="(47) 9999-9999" class="input-tel" /></label>
     							</div>
   							</div>
   							<div class="row">
     							<div class="small-12 small-centered columns">
-    						  		<a href="#" data-reveal-id="info" class="button expand radius">Salvar</a>
+    						  		<a href="#" data-reveal-id="info" class="button-salvar button expand radius">Salvar</a>
     							</div>
   							</div>
 						</form>
@@ -75,7 +75,7 @@
 					<!-- Se for paciente: mostrar a funcao de realizar convites -->
 					<!-- Ao clicar deve ir para sua pagina referente -->
 					<ul class="small-block-grid-2">
-						<li><a href="#"><img src="img/funcao.png" alt="funcao" /></a></li>
+						<li><a href="#" class="fun-nok"><img src="img/funcao-nok.png" alt="" /></a></li>
 					</ul>
 				</div>
 			</div>
@@ -85,10 +85,7 @@
 			<!-- Se for especialista ou tutor: mostrar os pacientes vinculados a ele (builders) -->
 			<!-- Se for paciente: mostrar os especialistas/tutores vinculados a ele (builders) -->
 			<!-- Ao clicar em um deve ir para a pagina "builder.html" -->
-			<ul class="small-block-grid-2">
-				<li><a href="builder.html"><img src="img/builder.png" alt="builder" /></a></li>
-				<li><a href="builder.html"><img src="img/builder.png" alt="builder" /></a></li>
-				<li><a href="builder.html"><img src="img/builder.png" alt="builder" /></a></li>
+			<ul class="builders small-block-grid-2">
 			</ul>
 		</div>
     </div>

@@ -1,10 +1,10 @@
 ﻿function logar(p) {
     if (p == 1)
-    	localStorage.perfil = "Especialista";
+    	localStorage.perfil = "especialista";
     else if (p == 2)
-    	localStorage.perfil = "Tutor";
+    	localStorage.perfil = "tutor";
     else
-    	localStorage.perfil = "Paciente";
+    	localStorage.perfil = "paciente";
    	    
 	location.href = "home.html";
 }

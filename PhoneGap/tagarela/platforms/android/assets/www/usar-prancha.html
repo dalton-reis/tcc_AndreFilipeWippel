@@ -14,13 +14,14 @@
     <script type="text/javascript" src="js/jquery.mobile-1.1.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 	<script src="js/vendor/modernizr.js"></script>
+	<script src="js/usar-prancha.js"></script>	
     
     <script>
         $(document).ready(function() {
-            var audioElement = document.createElement('audio');
-            audioElement.setAttribute('src', 'audio/musica.mp3');
+            var audioElement = document.createElement("audio");
             $.get();
-            $('.play').click(function() {
+            $(".play").click(function() {
+            	audioElement.setAttribute("src", localStorage.audio);
                 audioElement.play();
             });
         });
@@ -31,23 +32,14 @@
 	<div class="wrapper row">
 		<div class="navegacao small-1 columns">
 			<div class="voltar-only row">
-				<a href="javascript:window.history.go(-1)"><img src="img/voltar.png" alt="voltar" /></a>
+				<a href="javascript:window.history.go(-1)"><img src="img/voltar.png" alt="" /></a>
 			</div>
 		</div>
 		
 		<!-- Mostrar os simbolos (3x3) viculados a prancha selecionada -->
 		<div class="lista-itens small-11 columns">
 			<div class="prancha small-9 columns small-centered">
-				<ul class="small-block-grid-3">
-					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
-					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
-					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
-					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
-					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
-					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
-					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
-					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
-					<li><img src="img/simbolo.png" alt="simbolo" class="play"/></li>
+				<ul class="simbolos small-block-grid-3">
 				</ul>
 			</div>
 		</div>

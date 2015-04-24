@@ -14,13 +14,14 @@
     <script type="text/javascript" src="js/jquery.mobile-1.1.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 	<script src="js/vendor/modernizr.js"></script>
+	<script src="js/builder.js"></script>
 </head>
 
 <body>
 	<div class="wrapper row">
 		<div class="navegacao small-1 columns">
 			<div class="voltar-only row">
-				<a href="javascript:window.history.go(-1)"><img src="img/voltar.png" alt="voltar" /></a>
+				<a href="javascript:window.history.go(-1)"><img src="img/voltar.png" alt="" /></a>
 			</div>
 		</div>
     	
@@ -29,13 +30,13 @@
 				<div class="small-6 columns">
 					<!-- Mostrar a foto da pessoa escolhida na tela anterior -->
 					<!-- Ao clicar nela deve mostrar uma tela com seus dados -->
-					<a href="#" data-reveal-id="info"><img src="img/builder.png" alt="builder" class="left" /></a>
+					<a href="#" data-reveal-id="info" class="foto-img"></a>
 					
 					<div id="info" class="reveal-modal tiny" data-reveal role="dialog">
 						<h3>Informações Pessoais</h3><hr>
-  					  	<p><b>Nome:</b> ------------------------------</p>
-					  	<p><b>E-Mail:</b> ------------------------------</p>
-					  	<p><b>Telefone:</b> ------------------------------</p>
+  					  	<p class="info-nome"></p>
+					  	<p class="info-email"></p>
+					  	<p class="info-tel"></p>
 					  	<a class="close-reveal-modal" aria-label="fechar">&#215;</a>
 					</div>
 				</div>
@@ -46,10 +47,10 @@
 					<!-- Mostrar as 4 funcoes disponiveis para o builder -->
 					<!-- Ao clicar em uma delas deve ir para sua pagina referente -->
 					<ul class="small-block-grid-2">
-						<li><a href="prancha/prancha.html"><img src="img/funcao.png" alt="funcao" /></a></li>
-						<li><a href="#"><img src="img/funcao.png" alt="funcao" /></a></li>
-						<li><a href="#"><img src="img/funcao.png" alt="funcao" /></a></li>
-						<li><a href="compartilhar/filtro.html"><img src="img/funcao.png" alt="funcao" /></a></li>
+						<li><a href="prancha/prancha.html"><img src="img/criar-prancha.png" alt="" /></a></li>
+						<li><a href="#" class="fun-nok"><img src="img/funcao-nok.png" alt="" /></a></li>
+						<li><a href="#" class="fun-nok"><img src="img/funcao-nok.png" alt="" /></a></li>
+						<li><a href="compartilhar/filtro.html"><img src="img/compartilhar.png" alt="" /></a></li>
 					</ul>
 				</div>
 			</div>
@@ -58,14 +59,7 @@
 		<div class="area-transicao small-5 columns">
 			<!-- Mostrar os planos vinculados ao paciente -->
 			<!-- Ao clicar em um deve ir para a pagina "usar_plano.html" -->
-			<ul class="small-block-grid-2">
-				<li><a href="usar-plano.html"><img src="img/plano.png" alt="plano" /></a></li>
-				<li><a href="usar-plano.html"><img src="img/plano.png" alt="plano" /></a></li>
-				<li><a href="usar-plano.html"><img src="img/plano.png" alt="plano" /></a></li>
-				<li><a href="usar-plano.html"><img src="img/plano.png" alt="plano" /></a></li>
-				<li><a href="usar-plano.html"><img src="img/plano.png" alt="plano" /></a></li>
-				<li><a href="usar-plano.html"><img src="img/plano.png" alt="plano" /></a></li>
-				<li><a href="usar-plano.html"><img src="img/plano.png" alt="plano" /></a></li>
+			<ul class="planos small-block-grid-2">
 			</ul>
 		</div>
     </div>
