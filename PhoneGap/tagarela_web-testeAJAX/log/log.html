@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Tagarela</title>
+    
+    <link href="../css/jquery.mobile-1.1.2.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" href="../css/foundation.css" />
+	<link href="../css/app.css" rel="stylesheet" type="text/css" media="screen">
+    
+    <script type="text/javascript" src="../js/jquery.mobile-1.1.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+	<script src="../js/vendor/modernizr.js"></script>
+	<script src="../js/log.js"></script>
+</head>
+
+<body>
+	<div class="wrapper row">
+		<div class="navegacao small-1 columns">
+			<div class="voltar-only row">
+				<a href="javascript:window.history.go(-1)"><img src="../img/voltar.png" alt="" /></a>
+			</div>
+		</div>
+		
+		<!-- Mostra o log (com data/hora) de todas das atividades realizadas pelo usuário na aplicação -->
+		<div class="formulario small-11 columns">
+			<form>
+				<div class="small-12 small-centered columns">
+			    	<hr>
+					<h4 align="center">Histórico das Atividades</h4>
+					<div class="row">
+						<div class="small-12 columns">
+					    	<div class="log panel radius">
+							</div>
+					   	</div>
+					</div>
+				</div>
+			</form>
+		</div>
+    </div>
+    
+    <script src="../js/vendor/jquery.js"></script>
+	<script src="../js/foundation.min.js"></script>
+    <script>
+    	$(document).foundation();
+    </script>
+</body>
+
+</html>
