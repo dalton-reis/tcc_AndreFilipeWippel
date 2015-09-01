@@ -1,17 +1,42 @@
 ﻿$(document).ready(function() {
 
-	// Carrega as pranchas vinculadas ao plano
-	var pranchas;
-	if (localStorage.plano == "img/plano1.png")
-		pranchas = new Array("img/prancha1.png", "img/prancha2.png");
-	if (localStorage.plano == "img/plano2.png")
-		pranchas = new Array("img/prancha3.png");
-	for	(var i = 0; i < pranchas.length; i++) {
-		$(".pranchas").append("<li><a href='usar-prancha.html'><img src='"+pranchas[i]+"' alt='' class='img-prancha' /></a></li>");    	
-	}
-	
-	$(".img-prancha").mouseover(function() {
-  		localStorage.prancha = $(this).attr("src");
-	});
+	// Busca pranchas do plano
+	var dados = {
+		"idPlano" : localStorage.idPlano
+	};    
+	$.ajax({
+	    type     : "post",
+	    url      : "scripts/usar-plano.php",
+	    data     : dados,
+	    dataType : "json",
+	    success  : function(ret) {
+	    	$("body").removeClass("loading");
+	   		if (ret.erro) {
+		    	alert(ret.msg);
+		    }
+		    else {
+		    	for	(var i = 0; i < ret.pranchasId.length; i++) {
+					$(".pranchas").append("<li><a href='usar-prancha.html'>"
+										     +"<img src='img/"+ret.pranchasImg[i]+"' title='"+ret.pranchasAudio[i]+"' alt='"+ret.pranchasId[i]+"' class='img-prancha'/>"
+										 +"</a></li>");
+				}
+		    }
+	    },
+	    error    : function(ret) {
+	    	$("body").removeClass("loading");
+	   		alert("Erro no servidor (TIMEOUT)!");
+	    },
+	    beforeSend: function() {
+	    	$("body").addClass("loading");
+	    },
+       	complete: function() { 
+       		$("body").removeClass("loading");
+
+			$(".img-prancha").click(function() {
+		  		var alt = $(this).attr("alt");
+		  		localStorage.idPrancha = Number(alt);
+			});
+       	}
+	});	
 		
 });

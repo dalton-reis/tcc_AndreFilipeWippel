@@ -2,7 +2,13 @@
 
 	var audioElement = document.createElement("audio");
 	$.get();
-            
+	
+	// Mostra a função de aceitar ou de enviar convites
+	if (localStorage.perfil == 3)
+		$(".convites").append("<li><a href='convites/enviar-convite.html'><img src='img/enviar-convite.png' alt='' /></a></li>");
+    else
+    	$(".convites").append("<li><a href='convites/acc-convite.html'><img src='img/aceitar-convite.png' alt='' /></a></li>");
+    	
 	// Busca foto, info e builders do usuario
 	var dados = {
 		"idUser" : localStorage.idUser,
@@ -45,6 +51,7 @@
 			$(".foto-builder").click(function() {
 		  		var alt = $(this).attr("alt");
 		  		localStorage.idBuilder = Number(alt);
+		  		localStorage.builder = $(this).attr("src");
 			});
        	}
 	});
@@ -90,10 +97,6 @@
 	       		$("body").removeClass("loading");
 	       	}
 		});
-	});
-	
-	$(".fun-nok").click(function(){
-		alert("Esta função ainda não está terminada.");
 	});
 		
 });

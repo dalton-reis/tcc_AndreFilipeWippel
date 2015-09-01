@@ -1,0 +1,65 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Tagarela</title>
+    
+    <link href="../css/jquery.mobile-1.1.2.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" href="../css/foundation.css" />
+	<link href="../css/app.css" rel="stylesheet" type="text/css" media="screen">
+    
+    <script type="text/javascript" src="../js/jquery.mobile-1.1.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+	<script src="../js/vendor/modernizr.js"></script>
+	<script src="../js/enviar-convite.js"></script>
+</head>
+
+<body>
+	<div class="wrapper row">
+		<div class="navegacao small-1 columns">
+			<div class="ir row">
+				<img src="../img/ir.png" alt="" class="enviar-conv" />
+			</div>
+			
+			<div class="voltar row">
+				<a href="javascript:window.history.go(-1)"><img src="../img/voltar.png" alt="" /></a>
+			</div>
+		</div>
+		
+		<div class="formulario small-11 columns">
+			<form>
+				<div class="small-8 small-centered columns">
+					<hr>
+					<div class="row">
+				    	<div class="small-12 columns">
+				      		<label><b>Nome</b><input type="text" class="nome" /></label>
+				    	</div>
+				  	</div>
+					<div class="row">
+				    	<div class="small-12 columns">
+				      		<label><b>E-Mail</b><input type="text" /></label>
+				    	</div>
+				  	</div>
+					<div class="row">
+						<div class="small-12 columns">
+					    	<textarea placeholder="Envie uma mensagem" rows="15" class="msg"></textarea>
+						</div>
+					</div>
+			  	</div>
+			</form>
+		</div>
+		
+		<div class="caixa-loading"></div>
+    </div>
+    
+    <script src="../js/vendor/jquery.js"></script>
+	<script src="../js/foundation.min.js"></script>
+    <script>
+    	$(document).foundation();
+    </script>
+</body>
+
+</html>

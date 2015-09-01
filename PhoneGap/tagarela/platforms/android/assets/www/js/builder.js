@@ -1,30 +1,71 @@
 ﻿$(document).ready(function() {
 
-	// Carrega a foto do paciente (builder)
-	$(".foto-img").html("<img src='"+localStorage.builder+"' alt='' class='left' />");
+	var audioElement = document.createElement("audio");
+	$.get();
+            
+	// Busca foto, info e planos do builder
+	var dados = {
+		"idUser" : localStorage.idUser,
+		"perfil" : localStorage.perfil,	
+		"idBuilder" : localStorage.idBuilder,
+	};    
+	$.ajax({
+	    type     : "post",
+	    url      : "scripts/builder.php",
+	    data     : dados,
+	    dataType : "json",
+	    success  : function(ret) {
+	    	$("body").removeClass("loading");
+	   		if (ret.erro) {
+		    	alert(ret.msg);
+		    }
+		    else {
+		    	$(".foto-img").html("<img src='img/"+ret.fotoImg+"' title='"+ret.fotoAudio+"' alt='' class='left' />");
+		    	
+		    	$(".info-nome").html("<b>Nome:</b>"+ret.infoNome);
+				$(".info-email").html("<b>E-Mail:</b>"+ret.infoEmail);
+				$(".info-tel").html("<b>Telefone:</b>"+ret.infoTel);	
+				
+				for	(var i = 0; i < ret.planosId.length; i++) {
+					$(".planos").append("<li><a href='usar-plano.html'>"
+										     +"<img src='img/"+ret.planosImg[i]+"' title='"+ret.planosAudio[i]+"' alt='"+ret.planosId[i]+"' class='img-plano' />"
+										 +"</a></li>");
+				}
+		    }
+	    },
+	    error    : function(ret) {
+	    	$("body").removeClass("loading");
+	   		alert("Erro no servidor (TIMEOUT)!");
+	    },
+	    beforeSend: function() {
+	    	$("body").addClass("loading");
+	    },
+       	complete: function() { 
+       		$("body").removeClass("loading");
+
+			$(".img-plano").click(function() {
+		  		var alt = $(this).attr("alt");
+		  		localStorage.idPlano = Number(alt);
+			});
+       	}
+	});
 	
-	// Informações do paciente
-	$(".info-nome").html("<b>Nome:</b>"+localStorage.nome_pac);
-	$(".info-email").html("<b>E-Mail:</b>"+localStorage.email_pac);
-	$(".info-tel").html("<b>Telefone:</b>"+localStorage.tel_pac);
-	
-	// Função Obs e Hist. Log
-	$(".fun-nok").click(function(){
-		alert("Esta função ainda não está terminada.");
+	$(".foto-img").click(function() {
+    	var src = "audio/"+$(this).children("img").attr("title");
+  		audioElement.setAttribute("src",src);
+    	audioElement.play();
+    });
+
+	$(".criar-prancha").click(function(){
+		localStorage.simb1 = "../img/adicionar.png";
+		localStorage.simb2 = "../img/adicionar.png";
+		localStorage.simb3 = "../img/adicionar.png";
+		localStorage.simb4 = "../img/adicionar.png";
+		localStorage.simb5 = "../img/adicionar.png";
+		localStorage.simb6 = "../img/adicionar.png";
+		localStorage.simb7 = "../img/adicionar.png";
+		localStorage.simb8 = "../img/adicionar.png";
+		localStorage.simb9 = "../img/adicionar.png";
 	});
 
-	// Carrega os planos vinculados ao builder
-	var planos;
-	if (localStorage.builder == "img/pessoas-amarelo/giovanna-paciente.png")
-		planos = new Array("img/plano1.png");
-	if (localStorage.builder == "img/pessoas-amarelo/gabriel-irmao.png")
-		planos = new Array("img/plano2.png");
-	for	(var i = 0; i < planos.length; i++) {
-		$(".planos").append("<li><a href='usar-plano.html'><img src='"+planos[i]+"' alt='' class='img-plano' /></a></li>");    	
-	}
-	
-	$(".img-plano").mouseover(function() {
-  		localStorage.plano = $(this).attr("src");
-	});
-		
 });

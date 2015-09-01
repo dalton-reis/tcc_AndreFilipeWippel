@@ -28,8 +28,6 @@
     	<div class="area-controle small-6 columns">
 			<div class="foto row">
 				<div class="small-6 columns">
-					<!-- Mostrar a foto do especialista, tutor ou paciente -->
-					<!-- Ao clicar nela deve mostrar uma tela com seus dados -->
 					<a href="#" data-reveal-id="info" class="foto-img"></a>
 					
 					<div id="info" class="reveal-modal tiny" data-reveal role="dialog">
@@ -71,23 +69,18 @@
 			
 			<div class="funcoes row">
 				<div class="small-10 columns small-centered">
-					<!-- Se for especialista ou tutor: mostrar a funcao de aceitar convites -->
-					<!-- Se for paciente: mostrar a funcao de realizar convites -->
-					<!-- Ao clicar deve ir para sua pagina referente -->
-					<ul class="small-block-grid-2">
-						<li><a href="#" class="fun-nok"><img src="img/funcao-nok.png" alt="" /></a></li>
+					<ul class="convites small-block-grid-2">
 					</ul>
 				</div>
 			</div>
 		</div>
 
 		<div class="area-transicao small-5 columns">
-			<!-- Se for especialista ou tutor: mostrar os pacientes vinculados a ele (builders) -->
-			<!-- Se for paciente: mostrar os especialistas/tutores vinculados a ele (builders) -->
-			<!-- Ao clicar em um deve ir para a pagina "builder.html" -->
 			<ul class="builders small-block-grid-2">
 			</ul>
 		</div>
+		
+		<div class="caixa-loading"></div>
     </div>
        
     <script src="js/vendor/jquery.js"></script>

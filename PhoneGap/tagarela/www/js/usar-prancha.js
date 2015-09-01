@@ -1,40 +1,44 @@
 ﻿$(document).ready(function() {
 
-	// Carrega os simbolos vinculados a prancha
-	var simbolos;
-	var audios;
-	if (localStorage.prancha == "img/prancha1.png") {
-		simbolos = new Array("img/no-symbol.png", "img/no-symbol.png", "img/no-symbol.png",
-							 "img/pessoas-amarelo/giovanna-paciente.png", "img/verbos-verde/beber.png", "img/substantivos-laranja/suco.png",
-							 "img/no-symbol.png", "img/no-symbol.png", "img/no-symbol.png");
-		audios = new Array("no-sound", "no-sound", "no-sound",
-						   "giovana", "beber", "suco",
-						   "no-sound", "no-sound", "no-sound");
-	}
-	if (localStorage.prancha == "img/prancha2.png") {
-		simbolos = new Array("img/no-symbol.png", "img/no-symbol.png", "img/no-symbol.png",
-							 "img/pessoas-amarelo/giovanna-paciente.png", "img/verbos-verde/andar.png", "img/no-symbol.png",
-							 "img/no-symbol.png", "img/no-symbol.png", "img/no-symbol.png");
-		audios = new Array("no-sound", "no-sound", "no-sound",
-						   "giovana", "andar", "no-sound",
-						   "no-sound", "no-sound", "no-sound");
-	}
-	if (localStorage.prancha == "img/prancha3.png") {
-		simbolos = new Array("img/no-symbol.png", "img/no-symbol.png", "img/no-symbol.png",
-							 "img/pessoas-amarelo/gabriel-irmao.png", "img/verbos-verde/eu-quero-assistir.png", "img/substantivos-laranja/cocorico.png",
-							 "img/no-symbol.png", "img/no-symbol.png", "img/no-symbol.png");
-		audios = new Array("no-sound", "no-sound", "no-sound",
-						   "gabriel", "assistir", "fantoches",
-						   "no-sound", "no-sound", "no-sound");
-	}
-	for	(var i = 0; i < simbolos.length; i++) {
-		$(".simbolos").append("<li><img src='"+simbolos[i]+"' alt='"+audios[i]+"' class='img-simbolo play' /></a></li>");
-	}
-	
-	var alt;
-	$(".img-simbolo").mouseover(function() {
-  	 	alt = $(this).attr("alt");
-  		localStorage.audio = "audio/"+alt+".mp3";
+	var audioElement = document.createElement("audio");
+	$.get();
+
+	// Busca simbolos da prancha
+	var dados = {
+		"idPrancha" : localStorage.idPrancha
+	};    
+	$.ajax({
+	    type     : "post",
+	    url      : "scripts/usar-prancha.php",
+	    data     : dados,
+	    dataType : "json",
+	    success  : function(ret) {
+	    	$("body").removeClass("loading");
+	   		if (ret.erro) {
+		    	alert(ret.msg);
+		    }
+		    else {
+		    	for	(var i = 0; i < 9; i++) {
+					$(".simbolos").append("<li><img src='img/"+ret.simbolosImg[i]+"' title='"+ret.simbolosAudio[i]+"' alt='"+ret.simbolosId[i]+"' class='img-simbolo'/></li>");
+				}
+		    }
+	    },
+	    error    : function(ret) {
+	    	$("body").removeClass("loading");
+	   		alert("Erro no servidor (TIMEOUT)!");
+	    },
+	    beforeSend: function() {
+	    	$("body").addClass("loading");
+	    },
+       	complete: function() { 
+       		$("body").removeClass("loading");
+       		
+       		$(".img-simbolo").click(function() {
+		  		var src = "audio/"+$(this).attr("title");
+  				audioElement.setAttribute("src",src);
+    			audioElement.play();
+			});
+	   	}
 	});
 
 });
