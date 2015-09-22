@@ -11,7 +11,7 @@
 	};    
 	$.ajax({
 	    type     : "post",
-	    url      : "scripts/builder.php",
+	    url      : "http://teste-afwippel.rhcloud.com/scripts/builder.php",
 	    data     : dados,
 	    dataType : "json",
 	    success  : function(ret) {

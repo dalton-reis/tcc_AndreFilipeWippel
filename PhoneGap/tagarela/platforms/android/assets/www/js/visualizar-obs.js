@@ -11,7 +11,7 @@
 	};    
 	$.ajax({
 	    type     : "post",
-	    url      : "../scripts/visualizar-obs.php",
+	    url      : "http://teste-afwippel.rhcloud.com/scripts/visualizar-obs.php",
 	    data     : dados,
 	    dataType : "json",
 	    success  : function(ret) {
@@ -45,7 +45,7 @@
 			};    
 			$.ajax({
 			    type     : "post",
-			    url      : "../scripts/buscar-obs.php",
+			    url      : "http://teste-afwippel.rhcloud.com/scripts/buscar-obs.php",
 			    data     : dados,
 			    dataType : "json",
 			    success  : function(ret) {

@@ -8,7 +8,7 @@
 		};    
 		$.ajax({
 		    type     : "post",
-		    url      : "scripts/index.php",
+		    url      : "http://teste-afwippel.rhcloud.com/scripts/index.php",
 		    data     : dados,
 		    dataType : "json",
 		    success  : function(ret) {

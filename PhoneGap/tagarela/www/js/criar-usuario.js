@@ -9,7 +9,7 @@
 		};    
 		$.ajax({
 		    type     : "post",
-		    url      : "scripts/criar-usuario.php",
+		    url      : "http://teste-afwippel.rhcloud.com/scripts/criar-usuario.php",
 		    data     : dados,
 		    dataType : "json",
 		    success  : function(ret) {

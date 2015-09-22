@@ -11,7 +11,7 @@
 	$simbolo = 0;
     $i = 0;
     
-	$con = mysqli_connect("localhost","root","","tagarela_bd");
+	$con = mysqli_connect("127.2.255.2","adminwirF1YI","VeLImWhtsfKI","tagarela_bd","3306");
 	if (!$con) {
 		$erro = true;
 		$msg = "Não foi possível conectar no banco de dados! Erro: " . mysqli_connect_error();

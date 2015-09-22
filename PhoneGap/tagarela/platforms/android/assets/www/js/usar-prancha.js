@@ -9,7 +9,7 @@
 	};    
 	$.ajax({
 	    type     : "post",
-	    url      : "scripts/usar-prancha.php",
+	    url      : "http://teste-afwippel.rhcloud.com/scripts/usar-prancha.php",
 	    data     : dados,
 	    dataType : "json",
 	    success  : function(ret) {
