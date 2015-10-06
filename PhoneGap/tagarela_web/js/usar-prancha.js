@@ -19,7 +19,9 @@
 		    }
 		    else {
 		    	for	(var i = 0; i < 9; i++) {
-					$(".simbolos").append("<li><img src='img/"+ret.simbolosImg[i]+"' title='"+ret.simbolosAudio[i]+"' alt='"+ret.simbolosId[i]+"' class='img-simbolo'/></li>");
+					$(".simbolos").append("<li style='display:inline-block;'>"
+										 +"<img src='img/"+ret.simbolosImg[i]+"' title='"+ret.simbolosAudio[i]+"' alt='"+ret.simbolosId[i]+"' class='img-simbolo' style='margin:20px' height='150' width='150'/>"
+										 +"</li>");
 				}
 		    }
 	    },

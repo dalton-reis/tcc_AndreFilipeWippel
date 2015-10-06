@@ -12,7 +12,7 @@
 		planos = new Array("../img/plano1.png", "../img/plano2.png");
 	
 	for	(var i = 0; i < planos.length; i++) {
-		$(".planos").append("<li><a href='../compartilhar/pranchas.html'><img src='"+planos[i]+"' alt='' class='img-plano' /></a></li>");    	
+		$(".planos").append("<li style='display:inline-block'><a href='../compartilhar/pranchas.html'><img src='"+planos[i]+"' alt='' class='img-plano' style='margin:20px' height='150' width='150'/></a></li>");    	
 	}
 	
 	$(".img-plano").mouseover(function() {

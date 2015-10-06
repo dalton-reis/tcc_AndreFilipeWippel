@@ -16,9 +16,9 @@
 		    }
 		    else {
 		    	for	(var i = 0; i < ret.pranchasId.length; i++) {
-					$(".pranchas").append("<li><a href='usar-prancha.html'>"
-										     +"<img src='img/"+ret.pranchasImg[i]+"' title='"+ret.pranchasAudio[i]+"' alt='"+ret.pranchasId[i]+"' class='img-prancha'/>"
-										 +"</a></li>");
+					$(".pranchas").append("<a href='usar-prancha.html'>"
+										 +"<img src='img/"+ret.pranchasImg[i]+"' title='"+ret.pranchasAudio[i]+"' alt='"+ret.pranchasId[i]+"' class='img-prancha' style='margin:25px'/>"
+										 +"</a>");
 				}
 		    }
 	    },

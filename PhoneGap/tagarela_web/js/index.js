@@ -1,5 +1,5 @@
 ﻿$(document).ready(function() {
-
+		
 	$(".logar").click(function() {
 		// Busca perfil e id do usuario
 		var dados = {
@@ -36,7 +36,9 @@
 	});
 
 	$(".sair").click(function() {
-		alert("Esta função ainda não está terminada.");
+		$(".formulario").each(function(){
+			this.reset();
+		});
 	});
 
 });

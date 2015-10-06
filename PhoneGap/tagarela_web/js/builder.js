@@ -1,5 +1,7 @@
 ﻿$(document).ready(function() {
 
+	$('.modal-trigger').leanModal();
+	
 	var audioElement = document.createElement("audio");
 	$.get();
             
@@ -20,11 +22,11 @@
 		    	alert(ret.msg);
 		    }
 		    else {
-		    	$(".foto-img").html("<img src='img/"+ret.fotoImg+"' title='"+ret.fotoAudio+"' alt='' class='left' />");
+		    	$(".foto-img").html("<img src='img/"+ret.fotoImg+"' title='"+ret.fotoAudio+"' alt='' class='left' style='margin:25px' />");
 		    	
-		    	$(".info-nome").html("<b>Nome:</b>"+ret.infoNome);
-				$(".info-email").html("<b>E-Mail:</b>"+ret.infoEmail);
-				$(".info-tel").html("<b>Telefone:</b>"+ret.infoTel);	
+		    	$(".info-nome").html("<b>Nome: </b>"+ret.infoNome);
+				$(".info-email").html("<b>E-Mail: </b>"+ret.infoEmail);
+				$(".info-tel").html("<b>Telefone: </b>"+ret.infoTel);	
 				
 				for	(var i = 0; i < ret.planosId.length; i++) {
 					$(".planos").append("<li><a href='usar-plano.html'>"

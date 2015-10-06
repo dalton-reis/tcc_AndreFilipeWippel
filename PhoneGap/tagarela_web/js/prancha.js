@@ -14,7 +14,7 @@
 	
 	var existeSimb = false;
 	for	(var i = 0; i < 9; i++) {
-		$(".simbolos").append("<li><a href='../prancha/categorias.html'><img src='"+simbolos[i]+"' alt=''/></a></li>");
+		$(".simbolos").append("<li style='display:inline-block;'><a href='../prancha/categorias.html'><img src='"+simbolos[i]+"' alt='' style='margin:20px' height='150' width='150'/></a></li>");
 		if (simbolos[i] != "../img/adicionar.png")
 			existeSimb = true;
 	}

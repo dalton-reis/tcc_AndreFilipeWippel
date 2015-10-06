@@ -7,7 +7,7 @@
 	};    
 	$.ajax({
 	    type     : "post",
-	    url      : "http://teste-afwippel.rhcloud.com/scripts/mostrar-convite.php",
+	    url      : "../scripts/mostrar-convite.php",
 	    data     : dados,
 	    dataType : "json",
 	    success  : function(ret) {
@@ -39,7 +39,7 @@
 		};    
 		$.ajax({
 		    type     : "post",
-		    url      : "http://teste-afwippel.rhcloud.com/scripts/aceitar.php",
+		    url      : "../scripts/aceitar.php",
 		    data     : dados,
 		    dataType : "json",
 		    success  : function(ret) {

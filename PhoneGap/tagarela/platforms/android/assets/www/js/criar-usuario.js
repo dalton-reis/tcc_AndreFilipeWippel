@@ -1,5 +1,6 @@
 ﻿$(document).ready(function() {
-
+	$('select').material_select();
+	
 	$(".cad-usu").click(function() {
 		// Insere o novo usuario com a senha e perfil informados
 		var dados = {
@@ -9,7 +10,7 @@
 		};    
 		$.ajax({
 		    type     : "post",
-		    url      : "http://teste-afwippel.rhcloud.com/scripts/criar-usuario.php",
+		    url      : "scripts/criar-usuario.php",
 		    data     : dados,
 		    dataType : "json",
 		    success  : function(ret) {
@@ -18,7 +19,9 @@
 			    	alert(ret.msg);
 			    }
 			    else {
-			    	location.href = "index.html";
+			    	localStorage.idUser = ret.id;
+			    	localStorage.perfil = ret.perfil;
+			    	location.href = "home.html";
 				}			    	
 		    },
 		    error    : function(ret) {

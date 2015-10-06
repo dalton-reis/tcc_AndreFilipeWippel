@@ -26,7 +26,7 @@
 	}
 	
 	for	(var i = 0; i < simbolos.length; i++) {
-		$(".simbolos").append("<li class='simbs'><a href='../prancha/escolher-plano.html'><img src='"+simbolos[i]+"' alt='' class='img-simb'/></a></li>");  	
+		$(".simbolos").append("<li class='simbs' style='display:inline-block'><a href='../prancha/escolher-plano.html'><img src='"+simbolos[i]+"' alt='' class='img-simb' style='margin:20px' height='150' width='150'/></a></li>");  	
 	}
 	
 	$(".img-simb").click(function() {

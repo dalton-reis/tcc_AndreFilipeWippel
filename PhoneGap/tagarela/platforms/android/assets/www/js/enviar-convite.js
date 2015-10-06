@@ -9,7 +9,7 @@
 		};    
 		$.ajax({
 		    type     : "post",
-		    url      : "http://teste-afwippel.rhcloud.com/scripts/enviar-convite.php",
+		    url      : "../scripts/enviar-convite.php",
 		    data     : dados,
 		    dataType : "json",
 		    success  : function(ret) {

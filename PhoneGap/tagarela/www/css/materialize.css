@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Materialize v0.97.0 (http://materializecss.com)
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
@@ -6285,7 +6285,7 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     transition: color .2s; }
     .input-field .prefix.active {
       color: #26a69a; }
-  .input-field .prefix ~ input, .input-field .prefix ~ textarea {
+  .input-field .prefix ~ input, .input-field .prefix ~ textarea , .input-field .prefix ~ div.select-wrapper {
     margin-left: 3rem;
     width: 92%;
     width: calc(100% - 3rem); }

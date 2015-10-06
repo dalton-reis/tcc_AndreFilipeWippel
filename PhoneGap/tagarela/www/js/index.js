@@ -1,5 +1,5 @@
 ﻿$(document).ready(function() {
-
+		
 	$(".logar").click(function() {
 		// Busca perfil e id do usuario
 		var dados = {
@@ -8,7 +8,7 @@
 		};    
 		$.ajax({
 		    type     : "post",
-		    url      : "http://teste-afwippel.rhcloud.com/scripts/index.php",
+		    url      : "scripts/index.php",
 		    data     : dados,
 		    dataType : "json",
 		    success  : function(ret) {
@@ -36,7 +36,9 @@
 	});
 
 	$(".sair").click(function() {
-		alert("Esta função ainda não está terminada.");
+		$(".formulario").each(function(){
+			this.reset();
+		});
 	});
 
 });

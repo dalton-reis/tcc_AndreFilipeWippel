@@ -24,8 +24,8 @@ body.loading .caixa-loading { display:block; }
 
 /* Area de controle */
 .area-controle { overflow:auto; height:100%; }
-.area-controle .foto { height:40%; }
-.area-controle .funcoes { height:60%; }
+.area-controle .foto { height:35%; }
+.area-controle .funcoes { height:55%; }
 
 /* Area de transicao */
 .area-transicao { border-left:5px #669999 double; overflow:auto; height:100%; }

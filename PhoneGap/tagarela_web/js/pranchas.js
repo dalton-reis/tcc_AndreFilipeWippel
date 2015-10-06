@@ -8,7 +8,7 @@
 		pranchas = new Array("../img/prancha3.png");
 	
 	for	(var i = 0; i < pranchas.length; i++) {
-		$(".pranchas").append("<li><a href='../prancha/prancha.html'><img src='"+pranchas[i]+"' alt='' class='img-prancha' /></a></li>");    	
+		$(".pranchas").append("<li style='display:inline-block'><a href='../prancha/prancha.html'><img src='"+pranchas[i]+"' alt='' class='img-prancha' style='margin:20px' height='150' width='150'/></a></li>");    	
 	}
 	
 	$(".img-prancha").click(function() {

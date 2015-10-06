@@ -1,7 +1,7 @@
 ﻿$(document).ready(function() {
-
+  	
 	if (localStorage.perfil == 1 || localStorage.perfil == 2) {
-		$(".nov-obs").append("<a href='criar-obs.html' class='button radius expand'>Nova Observação</a>");
+		$(".nov-obs").append("<a href='criar-obs.html'><img src='../img/add-obs.png' alt='' height='150' width='175' /></a>");
 	}
 		
 	// Carrega todas as observações cadastradas pelo usuario
@@ -34,6 +34,7 @@
 	    },
        	complete: function() { 
 			$("body").removeClass("loading");
+			$('select').material_select();
        	}
 	});
 

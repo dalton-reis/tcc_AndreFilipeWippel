@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html class="no-js" lang="pt-br">
 
 <head>
 	<meta charset="utf-8" />
@@ -8,8 +8,9 @@
     <title>Tagarela</title>
     
     <link href="css/jquery.mobile-1.1.2.min.css" rel="stylesheet" type="text/css" media="screen">
-    <link rel="stylesheet" href="css/foundation.css" />
-	<link href="css/app.css" rel="stylesheet" type="text/css" media="screen">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>	
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/app2.css" rel="stylesheet" type="text/css" media="screen">
     
     <script type="text/javascript" src="js/jquery.mobile-1.1.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
@@ -28,29 +29,28 @@
 	</script>
 </head>
 
-<body>
-	<div class="wrapper row">
-		<div class="navegacao small-1 columns">
-			<div class="voltar-only row">
-				<a href="javascript:window.history.go(-1)"><img src="img/voltar.png" alt="" /></a>
+<body class="cyan lighten-2">
+	<div class="container z-depth-5">
+		<div class="wrapper row">
+			<div class="navegacao col s2">
+		    	<div class="voltar-only row" style="margin-bottom:0px">
+					<a href="javascript:window.history.go(-1)" class="waves-effect waves-white red btn-large z-depth-5 hoverable"></a>
+				</div>
+		    </div>
+			
+			<div class="lista-itens col s10 light-blue lighten-5 black-text">
+				<div class="container">
+					<ul class="simbolos center-align" style="margin-top:75px">
+					</ul>
+				</div>
 			</div>
-		</div>
-		
-		<div class="lista-itens small-11 columns">
-			<div class="prancha small-9 columns small-centered">
-				<ul class="simbolos small-block-grid-3">
-				</ul>
-			</div>
-		</div>
-		
-		<div class="caixa-loading"></div>
-    </div>
+			
+			<div class="caixa-loading"></div>
+	    </div>
+	</div>
     
-    <script src="js/vendor/jquery.js"></script>
-	<script src="js/foundation.min.js"></script>
-    <script>
-    	$(document).foundation();
-    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>

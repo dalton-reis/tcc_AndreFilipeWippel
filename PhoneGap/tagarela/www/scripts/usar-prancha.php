@@ -10,7 +10,7 @@
 	// Variaveis
 	$i = 0;
     
-	$con = mysqli_connect("127.2.255.2","adminwirF1YI","VeLImWhtsfKI","tagarela_bd","3306");
+	$con = mysqli_connect("127.6.181.2","adminHh2zviV","q7DGyPAINIsG","tagarela_bd","3306");
 	if (!$con) {
 		$erro = true;
 		$msg = "Não foi possível conectar no banco de dados! Erro: " . mysqli_connect_error();

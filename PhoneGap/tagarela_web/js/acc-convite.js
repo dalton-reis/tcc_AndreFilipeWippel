@@ -16,9 +16,13 @@
 		    }
 		    else {
 		    	for	(var i = 0; i < ret.pacientesId.length; i++) {
-					$(".pacientes").append("<li><a href='mostrar-convite.html'>"
-										      +"<img src='../img/"+ret.pacientesImg[i]+"' title='"+ret.pacientesAudio[i]+"' alt='"+ret.pacientesId[i]+"' class='img-paciente'/>"
-										  +"</a></li>");
+					$(".pacientes").append("<a href='mostrar-convite.html'>"
+										  +"<img src='../img/"+ret.pacientesImg[i]+"' title='"+ret.pacientesAudio[i]+"' alt='"+ret.pacientesId[i]+"' class='img-paciente' style='margin:25px'/>"
+										  +"</a>");
+				}
+				if (ret.pacientesId.length == 0) {
+					alert("Não há convites pendentes!");
+					location.href = "../home.html";
 				}
 		    }
 	    },
