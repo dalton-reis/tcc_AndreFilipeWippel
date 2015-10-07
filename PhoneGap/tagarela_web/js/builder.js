@@ -22,7 +22,7 @@
 		    	alert(ret.msg);
 		    }
 		    else {
-		    	$(".foto-img").html("<img src='img/"+ret.fotoImg+"' title='"+ret.fotoAudio+"' alt='' class='left' style='margin:25px' />");
+		    	$(".foto-img").html("<img src='img/"+ret.fotoImg+"' title='"+ret.fotoAudio+"' alt='' class='left' style='margin:25px' height='175' width='175' />");
 		    	
 		    	$(".info-nome").html("<b>Nome: </b>"+ret.infoNome);
 				$(".info-email").html("<b>E-Mail: </b>"+ret.infoEmail);

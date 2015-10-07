@@ -1,7 +1,7 @@
 <?php
 	$usuario = $_POST["usuario"];
 	$senha = $_POST["senha"];
-    $perfil = $_POST["perfil"];
+    $perfilIns = $_POST["perfil"];
     $erro = false;
     $msg = "";
     $id = 0;
@@ -14,7 +14,7 @@
 	}
 	else {
 		$query1 = "INSERT INTO usuarios (usuario, senha, perfil, simbolo) "
-				."VALUES ('$usuario', '$senha', '$perfil', '1') ";
+				."VALUES ('$usuario', '$senha', '$perfilIns', '16') ";
 		mysqli_query($con,$query1);
 		
 		$query = "SELECT id, perfil "
@@ -28,6 +28,9 @@
 				$id = $row["id"];
 				$perfil = $row["perfil"];
 			}
+			$query2 = "INSERT INTO info (usuario, nome, email, telefone) "
+					 ."VALUES ('$id', '$usuario', '', '') ";
+			mysqli_query($con,$query2);
 		}
 		else {
 			$erro = true;

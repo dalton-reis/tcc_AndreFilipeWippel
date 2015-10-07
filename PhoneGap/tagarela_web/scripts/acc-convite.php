@@ -10,7 +10,7 @@
 	// Variaveis
 	$simbolo = 0;
     $i = 0;
-
+    
 	$con = mysqli_connect("127.6.181.2","adminHh2zviV","q7DGyPAINIsG","tagarela_bd","3306");
 	if (!$con) {
 		$erro = true;
