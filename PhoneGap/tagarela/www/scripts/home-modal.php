@@ -11,7 +11,7 @@
     $retEmail = "";
     $retTel = "";
     
-	$con = mysqli_connect("localhost","root","","tagarela_bd");
+	$con = mysqli_connect("127.6.181.2","adminHh2zviV","q7DGyPAINIsG","tagarela_bd","3306");
 	if (!$con) {
 		$erro = true;
 		$msg = "Não foi possível conectar no banco de dados! Erro: " . mysqli_connect_error();
