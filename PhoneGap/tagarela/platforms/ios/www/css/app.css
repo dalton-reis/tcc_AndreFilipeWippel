@@ -1,0 +1,40 @@
+﻿/* Estilos comuns */
+.lista-itens { overflow:auto; height:100%; }
+
+/* Loading */
+.caixa-loading { display:none; position:fixed; z-index:1000; top:0; left:0; height:100%; width:100%;
+    			 background: rgba( 255, 255, 255, .8 ) 
+                			 url('http://i.stack.imgur.com/FhHRx.gif')
+                			 50% 50% 
+                			 no-repeat; }
+
+body.loading { overflow:hidden; }
+
+body.loading .caixa-loading { display:block; }
+
+/* Wrapper */
+.wrapper { border:thin black dashed; height:100%; }
+
+/* Navegacao */
+.navegacao { height:100%; }
+.navegacao .ir { background-color:#00CC00; height:50%; }
+.navegacao .voltar { background-color:#FF0000; height:50%; }
+.navegacao .voltar-only { background-color:#FF0000; height:100%; }
+.navegacao img { height:100%; width:100%; }
+
+/* Area de controle */
+.area-controle { overflow:auto; height:100%; }
+.area-controle .foto { height:40%; }
+.area-controle .funcoes { height:60%; }
+
+/* Area de transicao */
+.area-transicao { border-left:5px #669999 double; overflow:auto; height:100%; }
+
+/* Prancha */
+.prancha { height:100%; }
+
+/* Imagem */
+.imagem { height:100%; }
+
+/* Formulario */
+.formulario { height:100%; }
