@@ -18,7 +18,7 @@
 	};    
 	$.ajax({
 	    type     : "post",
-	    url      : "scripts/home.php",
+	    url      : "http://tagarela-afwippel.rhcloud.com/scripts/home.php",
 	    data     : dados,
 	    dataType : "json",
 	    success  : function(ret) {
@@ -74,7 +74,7 @@
 		};    
 		$.ajax({
 		    type     : "post",
-		    url      : "scripts/home-modal.php",
+		    url      : "http://tagarela-afwippel.rhcloud.com/scripts/home-modal.php",
 		    data     : dados,
 		    dataType : "json",
 		    success  : function(ret) {

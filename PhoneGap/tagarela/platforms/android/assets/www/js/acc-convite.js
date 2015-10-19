@@ -6,7 +6,7 @@
 	};    
 	$.ajax({
 	    type     : "post",
-	    url      : "../scripts/acc-convite.php",
+	    url      : "http://tagarela-afwippel.rhcloud.com/scripts/acc-convite.php",
 	    data     : dados,
 	    dataType : "json",
 	    success  : function(ret) {

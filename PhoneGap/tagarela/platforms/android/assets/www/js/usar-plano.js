@@ -6,7 +6,7 @@
 	};    
 	$.ajax({
 	    type     : "post",
-	    url      : "scripts/usar-plano.php",
+	    url      : "http://tagarela-afwippel.rhcloud.com/scripts/usar-plano.php",
 	    data     : dados,
 	    dataType : "json",
 	    success  : function(ret) {

@@ -13,7 +13,7 @@
 	};    
 	$.ajax({
 	    type     : "post",
-	    url      : "scripts/builder.php",
+	    url      : "http://tagarela-afwippel.rhcloud.com/scripts/builder.php",
 	    data     : dados,
 	    dataType : "json",
 	    success  : function(ret) {
