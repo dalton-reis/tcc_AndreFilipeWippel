@@ -5,8 +5,7 @@
 	var audioElement = document.createElement("audio");
 	$.get();
             
-	// Busca foto, info e planos do builder
-	var dados = {
+	/*var dados = {
 		"idUser" : localStorage.idUser,
 		"perfil" : localStorage.perfil,	
 		"idBuilder" : localStorage.idBuilder,
@@ -50,24 +49,101 @@
 		  		localStorage.idPlano = Number(alt);
 			});
        	}
-	});
-	
-	$(".foto-img").click(function() {
+	});*/
+	db.transaction(transFotoCons, nokQuery);
+	function nokQuery(erro) {
+		alert("Erro ao realizar operação no banco de dados! Erro: "+erro.code);
+	}
+	function transFotoCons(tx) {
+    	tx.executeSql("SELECT img,audio FROM simbolos WHERE simbolos.id = (SELECT simbolo FROM usuarios WHERE usuarios.id = ?)", [localStorage.idBuilder], okQueryFotoCons, nokQuery);
+    }
+    function okQueryFotoCons(tx, results) {
+    	var len = results.rows.length;
+        for (var i=0; i<len; i++) {
+	    	$(".foto-img").html("<img src='img/"+results.rows.item(i).img+"' title='"+results.rows.item(i).audio+"' alt='' class='left' style='margin:25px' height='175' width='175' />");
+	    }
+	    db.transaction(transInfoCons, nokQuery);
+    }
+    function transInfoCons(tx) {
+    	tx.executeSql("SELECT nome,email,telefone FROM info WHERE usuario = ?", [localStorage.idBuilder], okQueryInfoCons, nokQuery);
+    }
+    function okQueryInfoCons(tx, results) {
+    	var len = results.rows.length;
+        for (var i=0; i<len; i++) {
+	    	$(".info-nome").html("<b>Nome: </b>"+results.rows.item(i).nome);
+			$(".info-email").html("<b>E-Mail: </b>"+results.rows.item(i).email);
+			$(".info-tel").html("<b>Telefone: </b>"+results.rows.item(i).telefone);
+	    }
+	    db.transaction(transBuildersCons, nokQuery);
+    }
+    var pacienteCons;
+    var espTutCons;
+    function transBuildersCons(tx) {
+    	if (localStorage.perfil == 3) {
+    		pacienteCons = localStorage.idUser;
+    		espTutCons = localStorage.idBuilder;
+    	}
+    	else {
+    		pacienteCons = localStorage.idBuilder;
+    		espTutCons = localStorage.idUser;
+    	}
+    	tx.executeSql("SELECT id FROM builder WHERE paciente = ? AND esp_tut = ?", [pacienteCons,espTutCons], okQueryBuilderCons, nokQuery);
+    }
+    var builderId;
+    function okQueryBuilderCons(tx, results) {
+    	var len = results.rows.length;
+        for (var i=0; i<len; i++) {
+	    	builderId = results.rows.item(i).id;
+	    	db.transaction(transPlanosCons, nokQuery);
+	    }
+    }
+    function transPlanosCons(tx) {
+    	tx.executeSql("SELECT id,simbolo FROM planos WHERE builder = ?", [builderId], okQueryPlanosCons, nokQuery);
+    }
+    var planosId;
+    var simbPlano;
+    function okQueryPlanosCons(tx, results) {
+    	var len = results.rows.length;
+        for (var i=0; i<len; i++) {
+	    	planosId = results.rows.item(i).id;
+	    	simbPlano = results.rows.item(i).simbolo;
+	    	db.transaction(transSimbCons, nokQuery);
+	    }
+    }
+    function transSimbCons(tx) {
+    	tx.executeSql("SELECT img,audio FROM simbolos WHERE id = ?", [simbPlano], okQuerySimbCons, nokQuery);
+    }
+    function okQuerySimbCons(tx, results) {
+    	var len = results.rows.length;
+        for (var i=0; i<len; i++) {
+	    	$(".planos").append("<li><a href='usar-plano.html'>"
+							   +"<img src='img/"+results.rows.item(i).img+"' title='"+results.rows.item(i).audio+"' alt='"+planosId+"' class='img-plano' />"
+							   +"</a></li>");
+	    }
+	    $(".img-plano").click(function() {
+			var alt = $(this).attr("alt");
+			localStorage.idPlano = Number(alt);
+		});
+    }
+		
+	$(".foto-img").click(function mostrarInfo() {
     	var src = "audio/"+$(this).children("img").attr("title");
   		audioElement.setAttribute("src",src);
     	audioElement.play();
     });
 
-	$(".criar-prancha").click(function(){
-		localStorage.simb1 = "../img/adicionar.png";
-		localStorage.simb2 = "../img/adicionar.png";
-		localStorage.simb3 = "../img/adicionar.png";
-		localStorage.simb4 = "../img/adicionar.png";
-		localStorage.simb5 = "../img/adicionar.png";
-		localStorage.simb6 = "../img/adicionar.png";
-		localStorage.simb7 = "../img/adicionar.png";
-		localStorage.simb8 = "../img/adicionar.png";
-		localStorage.simb9 = "../img/adicionar.png";
+	$(".criar-prancha").click(function limparPrancha(){
+		localStorage.simb1 = "../img/adicionar.png"; localStorage.simb2 = "../img/adicionar.png"; localStorage.simb3 = "../img/adicionar.png";
+		localStorage.simb4 = "../img/adicionar.png"; localStorage.simb5 = "../img/adicionar.png"; localStorage.simb6 = "../img/adicionar.png";
+		localStorage.simb7 = "../img/adicionar.png"; localStorage.simb8 = "../img/adicionar.png"; localStorage.simb9 = "../img/adicionar.png";
+		
+		localStorage.idSimb1 = 0; localStorage.idSimb2 = 0; localStorage.idSimb3 = 0;
+		localStorage.idSimb4 = 0; localStorage.idSimb5 = 0; localStorage.idSimb6 = 0;
+		localStorage.idSimb7 = 0; localStorage.idSimb8 = 0; localStorage.idSimb9 = 0;
+		
+		localStorage.idSimbPrancha = 0;
+
+		localStorage.idPlanoPrancha = 0;
 	});
 
 });

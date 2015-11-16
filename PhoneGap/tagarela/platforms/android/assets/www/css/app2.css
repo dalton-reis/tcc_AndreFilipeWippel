@@ -12,8 +12,14 @@ body.loading { overflow:hidden; }
 
 body.loading .caixa-loading { display:block; }
 
+/* Header */
+.header { height:8vh; }
+
+/* Nome da tela */
+.nome-tela { height:100%; }
+
 /* Wrapper */
-.wrapper { height:100vh; }
+.wrapper { height:92vh; }
 
 /* Navegacao */
 .navegacao { height:100%; }
@@ -38,3 +44,6 @@ body.loading .caixa-loading { display:block; }
 
 /* Formulario */
 .formulario { height:100%; }
+
+/* Historico de atividades */
+.hist { overflow:auto; }

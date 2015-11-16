@@ -1,11 +1,11 @@
 ﻿$(document).ready(function() {
 
-	$(".enviar-conv").click(function() {
+	$(".enviar-conv").click(function enviarConvite() {
 		// Insere o convite
 		var dados = {
 			"nome"     : $(".nome").val(),
 			"paciente" : localStorage.idUser,
-			"msg" : $(".msg").val()	
+			"msg" : $(".msg").val()
 		};    
 		$.ajax({
 		    type     : "post",

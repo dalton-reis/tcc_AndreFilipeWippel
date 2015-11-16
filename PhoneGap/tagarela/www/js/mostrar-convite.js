@@ -31,7 +31,7 @@
        	}
 	});
 	
-	$(".aceitar").click(function(){
+	$(".aceitar").click(function aceitarConvite(){
 	    // Insere vinculo como builder
 		var dados = {
 			"idPac" : localStorage.idPaciente,

@@ -37,6 +37,6 @@
 		  		localStorage.idPrancha = Number(alt);
 			});
        	}
-	});	
+	});
 		
 });

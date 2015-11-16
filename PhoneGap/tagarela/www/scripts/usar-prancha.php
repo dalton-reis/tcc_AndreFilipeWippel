@@ -1,5 +1,9 @@
 <?php
 	// IN
+	$idBuilder = $_POST["idBuilder"];
+	$espTut = $_POST["espTut"];
+	$dataHora = $_POST["dataHora"];
+	$atv = $_POST["atv"];
 	$idPrancha = $_POST["idPrancha"];
 	// OUT
     $erro = false;
@@ -9,6 +13,7 @@
     $simbolosImg = array();
 	// Variaveis
 	$i = 0;
+	$builder = 0;
     
 	$con = mysqli_connect("127.6.181.2","adminHh2zviV","q7DGyPAINIsG","tagarela_bd","3306");
 	if (!$con) {
@@ -50,6 +55,16 @@
 				$simbolosAudio[$i] = "no-sound.mp3";
 			}
 		}
+		
+		$query1 = "SELECT id FROM builder "
+				 ."WHERE paciente = '$idBuilder' AND esp_tut = '$espTut'";
+		$res1 = mysqli_query($con,$query1);
+		$row1 = mysqli_fetch_assoc($res1);
+		$builder = $row1["id"];					
+		
+		$query2 = "INSERT INTO log (builder, data_hora, atividade) "
+				 ."VALUES ($builder, '$dataHora', '$atv')";
+		mysqli_query($con,$query2);
 	}
 	mysqli_close($con);
 

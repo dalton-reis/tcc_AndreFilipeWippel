@@ -15,7 +15,7 @@
 	var dados = {
 		"idUser" : localStorage.idUser,
 		"perfil" : localStorage.perfil
-	};    
+	};
 	$.ajax({
 	    type     : "post",
 	    url      : "http://tagarela-afwippel.rhcloud.com/scripts/home.php",
@@ -58,13 +58,13 @@
        	}
 	});
 	
-	$(".foto-img").click(function() {
+	$(".foto-img").click(function mostrarInfo() {
     	var src = "audio/"+$(this).children("img").attr("title");
   		audioElement.setAttribute("src",src);
     	audioElement.play();
     });
 
-	$(".button-salvar").click(function(){
+	$(".button-salvar").click(function alterarInfo(){
 	    // Atualiza info do usuario
 		var dados = {
 			"idUser" : localStorage.idUser,

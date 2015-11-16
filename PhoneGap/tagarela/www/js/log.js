@@ -1,13 +1,21 @@
 ﻿$(document).ready(function() {
 
-	// Busca o historico de atividades do paciente
+	// Verifica quem é o tutor e quem é o paciente
+	var tutor = localStorage.idUser;
+	var paciente = localStorage.idBuilder;
+	if (localStorage.perfil == 3) {
+		tutor = localStorage.idBuilder;
+		paciente = localStorage.idUser;
+	}
+
+	// Busca o historico de atividades do builder
 	var dados = {
-		"idBuilder" : localStorage.idBuilder,
-		"espTut" : localStorage.idUser,
+		"idBuilder" : paciente,
+		"espTut" : tutor,
 	};    
 	$.ajax({
 	    type     : "post",
-		url      : "http://tagarela-afwippel.rhcloud.com/scripts/log.php",
+	    url      : "http://tagarela-afwippel.rhcloud.com/scripts/log.php",
 	    data     : dados,
 	    dataType : "json",
 	    success  : function(ret) {

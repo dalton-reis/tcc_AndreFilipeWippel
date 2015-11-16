@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function atualizaSimbolos() {
 
 	// Carrega os simbolos atraves das variaveis globais
 	var simbolos = [];

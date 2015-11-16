@@ -1,6 +1,6 @@
 ﻿$(document).ready(function() {
 		
-	$(".logar").click(function() {
+	$(".logar").click(function logar() {
 		// Busca perfil e id do usuario
 		var dados = {
 			"usuario" : $(".usuario").val(),
@@ -35,7 +35,7 @@
 		});
 	});
 
-	$(".sair").click(function() {
+	$(".sair").click(function sair() {
 		$(".formulario").each(function(){
 			this.reset();
 		});

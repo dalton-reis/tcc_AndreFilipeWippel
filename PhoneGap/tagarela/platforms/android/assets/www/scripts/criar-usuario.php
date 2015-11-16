@@ -2,6 +2,7 @@
 	$usuario = $_POST["usuario"];
 	$senha = $_POST["senha"];
     $perfilIns = $_POST["perfil"];
+    $simbUsu = $_POST["simbolo"];
     $erro = false;
     $msg = "";
     $id = 0;
@@ -14,7 +15,7 @@
 	}
 	else {
 		$query1 = "INSERT INTO usuarios (usuario, senha, perfil, simbolo) "
-				."VALUES ('$usuario', '$senha', '$perfilIns', '16') ";
+				."VALUES ('$usuario', '$senha', '$perfilIns', '$simbUsu') ";
 		mysqli_query($con,$query1);
 		
 		$query = "SELECT id, perfil "

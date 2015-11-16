@@ -1,7 +1,6 @@
 ﻿$(document).ready(function() {
 
-	// Busca a mensagem
-	var dados = {
+	/*var dados = {
 		"idPaciente" : localStorage.idPaciente,
 		"idEspTut" : localStorage.idUser
 	};    
@@ -29,11 +28,23 @@
        	complete: function() { 
        		$("body").removeClass("loading");
        	}
-	});
+	});*/
+	db.transaction(transMosConv, nokQuery);
+	function nokQuery(erro) {
+		alert("Erro ao realizar operação no banco de dados! Erro: "+erro.code);
+	}
+	function transMosConv(tx) {
+    	tx.executeSql("SELECT msg FROM convites WHERE esp_tut = ? AND paciente = ?", [localStorage.idUser,localStorage.idPaciente], okQueryMosConv, nokQuery);
+    }
+    function okQueryMosConv(tx, results) {
+    	var len = results.rows.length;
+        for (var i=0; i<len; i++) {
+	    	$(".mensagem").text(results.rows.item(i).msg);
+	    }
+	}
 	
-	$(".aceitar").click(function(){
-	    // Insere vinculo como builder
-		var dados = {
+	$(".aceitar").click(function aceitarConvite() {
+	    /*var dados = {
 			"idPac" : localStorage.idPaciente,
 			"idET" : localStorage.idUser
 		};    
@@ -58,7 +69,18 @@
 	       	complete: function() { 
 	       		$("body").removeClass("loading");
 	       	}
-		});
+		});*/
+		db.transaction(transMosBuilder, nokQuery);
 	});
-		
+	
+	function transMosBuilder(tx) {
+    	tx.executeSql("INSERT INTO builder (paciente,esp_tut) VALUES (?,?) ", [localStorage.idPaciente,localStorage.idUser], okQueryMosBuilder, nokQuery);
+    }
+    function okQueryMosBuilder(tx, results) {
+    	db.transaction(transMosConvDel, nokQuery);
+	}
+	function transMosConvDel(tx) {
+    	tx.executeSql("DELETE FROM convites WHERE paciente = ? AND esp_tut = ?", [localStorage.idPaciente,localStorage.idUser]);
+    }	
+	
 });

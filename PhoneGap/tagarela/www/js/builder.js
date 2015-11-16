@@ -52,22 +52,24 @@
        	}
 	});
 	
-	$(".foto-img").click(function() {
+	$(".foto-img").click(function mostrarInfo() {
     	var src = "audio/"+$(this).children("img").attr("title");
   		audioElement.setAttribute("src",src);
     	audioElement.play();
     });
 
-	$(".criar-prancha").click(function(){
-		localStorage.simb1 = "../img/adicionar.png";
-		localStorage.simb2 = "../img/adicionar.png";
-		localStorage.simb3 = "../img/adicionar.png";
-		localStorage.simb4 = "../img/adicionar.png";
-		localStorage.simb5 = "../img/adicionar.png";
-		localStorage.simb6 = "../img/adicionar.png";
-		localStorage.simb7 = "../img/adicionar.png";
-		localStorage.simb8 = "../img/adicionar.png";
-		localStorage.simb9 = "../img/adicionar.png";
+	$(".criar-prancha").click(function limparPrancha(){
+		localStorage.simb1 = "../img/adicionar.png"; localStorage.simb2 = "../img/adicionar.png"; localStorage.simb3 = "../img/adicionar.png";
+		localStorage.simb4 = "../img/adicionar.png"; localStorage.simb5 = "../img/adicionar.png"; localStorage.simb6 = "../img/adicionar.png";
+		localStorage.simb7 = "../img/adicionar.png"; localStorage.simb8 = "../img/adicionar.png"; localStorage.simb9 = "../img/adicionar.png";
+		
+		localStorage.idSimb1 = 0; localStorage.idSimb2 = 0; localStorage.idSimb3 = 0;
+		localStorage.idSimb4 = 0; localStorage.idSimb5 = 0; localStorage.idSimb6 = 0;
+		localStorage.idSimb7 = 0; localStorage.idSimb8 = 0; localStorage.idSimb9 = 0;
+		
+		localStorage.idSimbPrancha = 0;
+
+		localStorage.idPlanoPrancha = 0;
 	});
 
 });

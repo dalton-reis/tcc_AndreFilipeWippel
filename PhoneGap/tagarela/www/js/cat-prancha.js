@@ -1,20 +1,17 @@
 ﻿$(document).ready(function() {
 
 	// Guarda a categoria que foi selecionada
-	$(".verde").click(function() {
-  		localStorage.catSel = "verde";
-	});
-	
-	$(".vermelho").click(function() {
-  		localStorage.catSel = "vermelho";
-	});
-	
-	$(".azul").click(function() {
-  		localStorage.catSel = "azul";
-	});
-	
 	$(".amarelo").click(function() {
-  		localStorage.catSel = "amarelo";
+  		localStorage.catSel = 1;
+	});
+	$(".vermelho").click(function() {
+  		localStorage.catSel = 2;
+	});
+	$(".verde").click(function() {
+  		localStorage.catSel = 3;
+	});
+	$(".azul").click(function() {
+  		localStorage.catSel = 4;
 	});
 	
 });

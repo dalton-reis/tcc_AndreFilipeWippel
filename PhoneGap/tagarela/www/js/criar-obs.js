@@ -1,6 +1,6 @@
 ﻿$(document).ready(function() {
 
-	$(".cad-obs").click(function() {
+	$(".cad-obs").click(function criarObs() {
 		// Insere a nova observacao com os dados informados
 		var dados = {
 			"idBuilder" : localStorage.idBuilder,

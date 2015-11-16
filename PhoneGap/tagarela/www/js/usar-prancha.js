@@ -1,10 +1,34 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function usarPrancha() {
 
 	var audioElement = document.createElement("audio");
 	$.get();
+	
+	// Verifica quem é o tutor e quem é o paciente
+	var tutor = localStorage.idUser;
+	var paciente = localStorage.idBuilder;
+	if (localStorage.perfil == 3) {
+		tutor = localStorage.idBuilder;
+		paciente = localStorage.idUser;
+	}
+	// Data-hora atual e atividade
+	var hoje = new Date();
+	var dia = hoje.getDate();
+	var mes = hoje.getMonth()+1;
+	var ano = hoje.getFullYear();
+	var hora = hoje.getHours();
+	var min = hoje.getMinutes();
+	var seg = hoje.getSeconds();
+	var data = dia+'/'+mes+'/'+ano;
+	var hora = hora+':'+min+':'+seg;
+	var dataHora = data+" - "+hora;
+	var atv = "Usou a prancha "+localStorage.idPrancha;
 
 	// Busca simbolos da prancha
 	var dados = {
+		"idBuilder" : paciente,
+		"espTut" : tutor,
+		"dataHora" : dataHora,
+		"atv" : atv,
 		"idPrancha" : localStorage.idPrancha
 	};    
 	$.ajax({
@@ -12,7 +36,7 @@
 	    url      : "http://tagarela-afwippel.rhcloud.com/scripts/usar-prancha.php",
 	    data     : dados,
 	    dataType : "json",
-	    success  : function(ret) {
+	    success  : function gravarLog(ret) {
 	    	$("body").removeClass("loading");
 	   		if (ret.erro) {
 		    	alert(ret.msg);

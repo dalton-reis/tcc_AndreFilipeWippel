@@ -1,50 +1,81 @@
 ﻿$(document).ready(function() {
 
-	// Carrega as pranchas vinculadas ao plano
-	var pranchas;
-	if (localStorage.plano == "../img/plano1.png")
-		pranchas = new Array("../img/prancha1.png", "../img/prancha2.png");
-	if (localStorage.plano == "../img/plano2.png")
-		pranchas = new Array("../img/prancha3.png");
-	
-	for	(var i = 0; i < pranchas.length; i++) {
-		$(".pranchas").append("<li style='display:inline-block'><a href='../prancha/prancha.html'><img src='"+pranchas[i]+"' alt='' class='img-prancha' style='margin:20px' height='150' width='150'/></a></li>");    	
-	}
-	
-	$(".img-prancha").click(function() {
-  		if ($(this).attr("src") == "../img/prancha1.png") {
-  			localStorage.simb1 = "../img/adicionar.png";
-  			localStorage.simb2 = "../img/adicionar.png";
-  			localStorage.simb3 = "../img/adicionar.png";
-  			localStorage.simb4 = "../img/pessoas-amarelo/giovanna-paciente.png";
-  			localStorage.simb5 = "../img/verbos-verde/beber.png";
-  			localStorage.simb6 = "../img/substantivos-vermelho/suco.png";
-  			localStorage.simb7 = "../img/adicionar.png";
-  			localStorage.simb8 = "../img/adicionar.png";
-  			localStorage.simb9 = "../img/adicionar.png";
-  		}
-  		if ($(this).attr("src") == "../img/prancha2.png") {
-  			localStorage.simb1 = "../img/adicionar.png";
-  			localStorage.simb2 = "../img/adicionar.png";
-  			localStorage.simb3 = "../img/adicionar.png";
-  			localStorage.simb4 = "../img/pessoas-amarelo/giovanna-paciente.png";
-  			localStorage.simb5 = "../img/verbos-verde/andar.png";
-  			localStorage.simb6 = "../img/adicionar.png";
-  			localStorage.simb7 = "../img/adicionar.png";
-  			localStorage.simb8 = "../img/adicionar.png";
-  			localStorage.simb9 = "../img/adicionar.png";	
-  		}
-  		if ($(this).attr("src") == "../img/prancha3.png") {
-  			localStorage.simb1 = "../img/adicionar.png";
-  			localStorage.simb2 = "../img/adicionar.png";
-  			localStorage.simb3 = "../img/adicionar.png";
-  			localStorage.simb4 = "../img/pessoas-amarelo/gabriel-irmao.png";
-  			localStorage.simb5 = "../img/verbos-verde/eu-quero-assistir.png";
-  			localStorage.simb6 = "../img/substantivos-vermelho/cocorico.png";
-  			localStorage.simb7 = "../img/adicionar.png";
-  			localStorage.simb8 = "../img/adicionar.png";
-  			localStorage.simb9 = "../img/adicionar.png";
-  		}  		
+	// Busca pranchas do plano
+	var dados = {
+		"idPlano" : localStorage.plano
+	};    
+	$.ajax({
+	    type     : "post",
+	    url      : "http://tagarela-afwippel.rhcloud.com/scripts/pranchas.php",
+	    data     : dados,
+	    dataType : "json",
+	    success  : function(ret) {
+	    	$("body").removeClass("loading");
+	   		if (ret.erro) {
+		    	alert(ret.msg);
+		    }
+		    else {
+		    	for	(var i = 0; i < ret.pranchasId.length; i++) {
+					$(".pranchas").append("<li style='display:inline-block'><a href='#'>"
+										 +"<img src='../img/"+ret.pranchasImg[i]+"' title='"+ret.pranchasAudio[i]+"' alt='"+ret.pranchasId[i]+"' class='img-prancha' style='margin:20px' height='150' width='150'/>"
+										 +"</a></li>");    	
+				}
+		    }
+	    },
+	    error    : function(ret) {
+	    	$("body").removeClass("loading");
+	   		alert("Erro no servidor (TIMEOUT)!");
+	    },
+	    beforeSend: function() {
+	    	$("body").addClass("loading");
+	    },
+       	complete: function() { 
+       		$("body").removeClass("loading");
+
+			$(".img-prancha").click(function reutilizarPrancha() {
+				var alt = $(this).attr("alt");
+				prancha = Number(alt);
+				
+				// Busca os simbolos da prancha
+				var dados = {
+					"prancha" : prancha,
+				};    
+				$.ajax({
+					type     : "post",
+					url      : "http://tagarela-afwippel.rhcloud.com/scripts/buscar-prancha.php",
+					data     : dados,
+					dataType : "json",
+					success  : function(ret) {
+						$("body").removeClass("loading");
+						if (ret.erro) {
+							alert(ret.msg);
+						}
+						else {
+							localStorage.simb1 = "../img/"+ret.simbolosImg[0]; localStorage.simb2 = "../img/"+ret.simbolosImg[1]; localStorage.simb3 = "../img/"+ret.simbolosImg[2];
+							localStorage.simb4 = "../img/"+ret.simbolosImg[3]; localStorage.simb5 = "../img/"+ret.simbolosImg[4]; localStorage.simb6 = "../img/"+ret.simbolosImg[5];
+							localStorage.simb7 = "../img/"+ret.simbolosImg[6]; localStorage.simb8 = "../img/"+ret.simbolosImg[7]; localStorage.simb9 = "../img/"+ret.simbolosImg[8];
+							localStorage.idSimb1 = ret.simbolosId[0]; localStorage.idSimb2 = ret.simbolosId[1]; localStorage.idSimb3 = ret.simbolosId[2];
+							localStorage.idSimb4 = ret.simbolosId[3]; localStorage.idSimb5 = ret.simbolosId[4]; localStorage.idSimb6 = ret.simbolosId[5];
+							localStorage.idSimb7 = ret.simbolosId[6]; localStorage.idSimb8 = ret.simbolosId[7]; localStorage.idSimb9 = ret.simbolosId[8];
+							localStorage.idSimbPrancha = 0;
+							localStorage.idPlanoPrancha = 0;
+							
+							location.href = "../prancha/prancha.html";
+						}
+					},
+					error    : function(ret) {
+						$("body").removeClass("loading");
+						alert("Erro no servidor (TIMEOUT)!");
+					},
+					beforeSend: function() {
+						$("body").addClass("loading");
+					},
+					complete: function() { 
+						$("body").removeClass("loading");
+					}
+				});
+			});
+       	}
 	});
-		
+
 });
