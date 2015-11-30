@@ -1,0 +1,115 @@
+﻿<!DOCTYPE HTML>
+<html class="no-js" lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Tagarela</title>
+    
+    <link href="css/jquery.mobile-1.1.2.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>	
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/app2.css" rel="stylesheet" type="text/css" media="screen">
+    
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.1.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/vendor/modernizr.js"></script>
+    <script src="js/db/database.js"></script>
+	<script src="js/db/sinc-dados.js"></script>
+    <script src="js/home.js"></script>
+</head>
+
+<body class="cyan lighten-2">
+	<div class="container">	
+		<div class="header row z-depth-5 teal lighten-2" style="margin-bottom:0px">
+			<div class="col s12 nome-tela">
+        		<div>
+          			<h4 class="white-text center-align" style="margin-top:13px;font-family:Castellar">Início</h4>
+        		</div>
+      		</div>
+		</div>
+		<div class="wrapper row z-depth-5" style="margin-bottom:0px">
+	    	<div class="navegacao col s2">
+		    	<div class="voltar-only row" style="margin-bottom:0px">
+					<a href="index.html" class="waves-effect waves-white red btn-large z-depth-5 hoverable"></a>
+				</div>
+		    </div>
+	    	
+	    	<div class="area-controle col s6 light-blue lighten-5 black-text">
+				<div class="foto row">
+					<div class="col s6">
+						<a href="#info" class="foto-img modal-trigger"></a>
+						
+						<div id="info" class="modal center-align light-blue lighten-5 black-text">
+							<div class="modal-content">
+								<h3 class="teal-text">Informações Pessoais</h3><hr>
+			  					<div class="row"></div><p class="info-nome"></p>
+								<div class="row"></div><p class="info-email"></p>
+								<div class="row"></div><p class="info-tel"></p>
+								<div class="row"></div>
+								<a href="#alterar-info" class="buton-alterar modal-trigger waves-effect waves-blue cyan btn-large z-depth-1">Alterar</a>
+						    </div>
+						</div>
+						
+						<div id="alterar-info" class="modal center-align light-blue lighten-5 black-text">
+							<div class="modal-content">
+								<h3 class="teal-text">Informações Pessoais</h3><hr>
+		  						<form class="valign-wrapper">
+									<div class="container">
+										<div class="row">
+			    							<div class="input-field col s12">
+										   		<i class="cyan-text lighten-text-2 material-icons prefix">perm_identity</i>
+										   		<input id="name" type="text" class="input-nome teal-text">
+										   		<label for="name">Nome</label>
+										  	</div>
+			  							</div>
+			  							<div class="row">
+			    							<div class="input-field col s12">
+										   		<i class="cyan-text lighten-text-2 material-icons prefix">email</i>
+										   		<input id="email" type="text" class="input-email teal-text">
+										   		<label for="email">E-Mail</label>
+										  	</div>
+			  							</div>
+			  							<div class="row">
+			    							<div class="input-field col s12">
+										   		<i class="cyan-text lighten-text-2 material-icons prefix">phone</i>
+										   		<input id="tel" type="text" class="input-tel teal-text">
+										   		<label for="tel">Telefone</label>
+										  	</div>
+			  							</div>
+			  							<div class="row">
+			    							<div class="col s12 center-align">
+												<a href="#!" class="button-salvar modal-action modal-close waves-effect waves-blue cyan btn-large z-depth-1">Salvar</a>
+											</div>
+			  							</div>
+			  						</div>
+								</form>
+						    </div>
+						</div>						
+					</div>
+				</div>
+				
+				<div class="funcoes row">
+					<div class="col s10">
+						<ul class="convites">
+						</ul>
+					</div>
+				</div>
+			</div>
+	
+			<div class="area-transicao col s4 light-blue lighten-5 black-text">
+				<ul class="builders center-align">
+				</ul>
+			</div>
+			
+			<div class="caixa-loading"></div>
+	    </div>
+    </div>
+       
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
