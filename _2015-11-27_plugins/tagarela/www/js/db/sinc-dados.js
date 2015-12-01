@@ -24,7 +24,7 @@ function criarTab(tx) {
 
 // CONSISTENCIA DAS TABELAS *****************************************************************************************************************************************************************
 function consistirDados(erro) {
-	alert("Consistindo os dados com o servidor...");
+//	alert("Consistindo os dados com o servidor...");
 	db.transaction(consTabelas, nokTransSinc, okTransSinc);
 }
 function consTabelas(tx) {

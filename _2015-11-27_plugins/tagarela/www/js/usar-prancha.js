@@ -160,7 +160,7 @@
         var aux = 0;
     }
 	function onError(error) {
-    	alert('Não foi possível reproduzir o reproduzir o arquivo de audio: '+srcAudio);
+    	alert('Não foi possível reproduzir o arquivo de audio: '+srcAudio);
     }
     
 });
