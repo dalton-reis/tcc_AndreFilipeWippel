@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.testeplugins" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Tagarela</name>
+    <description>
+        Tagarela: Aplicativo de Rede de Comunicacao Alternativa.
+    </description>
+    <author email="wippelandre@hotmail.com" href="http://www.furb.br/">
+        Andre Filipe Wippel
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

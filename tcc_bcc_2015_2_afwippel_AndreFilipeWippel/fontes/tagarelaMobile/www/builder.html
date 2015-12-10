@@ -1,0 +1,85 @@
+﻿<!DOCTYPE HTML>
+<html class="no-js" lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Tagarela</title>
+    
+    <link href="css/jquery.mobile-1.1.2.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>	
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/app2.css" rel="stylesheet" type="text/css" media="screen">
+    
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.1.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/vendor/modernizr.js"></script>
+	<script src="js/db/database.js"></script>
+	<script src="js/db/sinc-dados.js"></script>
+    <script src="js/builder.js"></script>
+</head>
+
+<body class="cyan lighten-2">
+	<div class="container">	
+		<div class="header row z-depth-5 teal lighten-2" style="margin-bottom:0px">
+			<div class="col s12 nome-tela">
+        		<div>
+          			<h4 class="white-text center-align" style="margin-top:13px;font-family:Castellar">Construtor</h4>
+        		</div>
+      		</div>
+		</div>
+		<div class="wrapper row z-depth-5" style="margin-bottom:0px">
+			<div class="navegacao col s2">
+		    	<div class="voltar-only row" style="margin-bottom:0px">
+					<a href="home.html" class="waves-effect waves-white red btn-large z-depth-5 hoverable"></a>
+				</div>
+		    </div>
+	    	
+			<div class="area-controle col s6 light-blue lighten-5 black-text">
+				<div class="foto row">
+					<div class="col s6">
+						<a href="#info" class="foto-img modal-trigger"></a>
+						
+						<div id="info" class="modal center-align light-blue lighten-5 black-text">
+							<div class="modal-content">
+								<h3 class="teal-text">Informações Pessoais</h3><hr>
+			  					<div class="row"></div><p class="info-nome"></p>
+								<div class="row"></div><p class="info-email"></p>
+								<div class="row"></div><p class="info-tel"></p>
+						    </div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="funcoes row">
+					<div class="col s6">
+						<ul>
+							<li><a href="prancha/prancha.html" class="criar-prancha"><img src="img/criar-prancha.png" alt="" height="175" width="175" style="margin-left:45px;margin-bottom:30px" /></a></li>
+							<li><a href="observacoes/visualizar-obs.html"><img src="img/obs.png" alt="" height="175" width="175" style="margin-left:45px" /></a></li>
+						</ul>
+					</div>
+					<div class="col s6">
+						<ul>
+							<li><a href="compartilhar/filtro.html"><img src="img/compartilhar.png" alt="" height="175" width="175" style="margin-left:15px;margin-bottom:30px" /></a></li>
+							<li><a href="log/log.html"><img src="img/log.png" alt="" height="175" width="175" style="margin-left:15px" /></a></li>
+						</ul>	
+					</div>
+				</div>
+			</div>
+			
+			<div class="area-transicao col s4 light-blue lighten-5 black-text">
+				<ul class="planos center-align">
+				</ul>
+			</div>
+	    
+			<div class="caixa-loading"></div>
+	    </div>
+	</div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>

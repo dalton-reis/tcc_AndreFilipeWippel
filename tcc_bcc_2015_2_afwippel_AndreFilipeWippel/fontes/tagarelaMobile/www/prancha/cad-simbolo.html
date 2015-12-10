@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Tagarela</title>
+    
+    <link href="../css/jquery.mobile-1.1.2.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/>	
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="../css/app2.css" rel="stylesheet" type="text/css" media="screen">
+    
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" src="../js/jquery.mobile-1.1.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+	<script src="../js/vendor/modernizr.js"></script>
+	<script src="../js/db/database.js"></script>
+	<script src="../js/db/sinc-dados.js"></script>
+    <script src="../js/cad-simbolo.js"></script>
+</head>
+
+<body class="cyan lighten-2">
+	<div class="container">
+		<div class="header row z-depth-5 teal lighten-2" style="margin-bottom:0px">
+			<div class="col s12 nome-tela">
+        		<div>
+          			<h4 class="white-text center-align" style="margin-top:13px;font-family:Castellar">Novo Símbolo</h4>
+        		</div>
+      		</div>
+		</div>
+		<div class="wrapper row z-depth-5" style="margin-bottom:0px">
+			<div class="navegacao col s2">
+		    	<div class="ir row" style="margin-bottom:0px">
+					<a href="#" class="gravar-simb waves-effect waves-white green btn-large z-depth-5 hoverable"></a>
+				</div>	
+				<div class="voltar row" style="margin-bottom:0px">
+					<a href="javascript:window.history.go(-1)" class="waves-effect waves-white red btn-large z-depth-5 hoverable"></a>
+				</div>
+		    </div>
+			
+			<div class="imagem col s3 light-blue lighten-5 teal-text valign-wrapper">
+				<div class="container" style="border:1px solid transparent">
+					<img src="../img/sem-imagem.png" title="" class="img-simb" style="margin-top:260px" height='175' width='175'/>
+				</div>
+			</div>
+			
+			<form class="formulario col s7 light-blue lighten-5 teal-text valign-wrapper">
+				<div class="container" style="border:1px solid transparent">
+					<div class="row" style="margin-top:100px">
+						<div class="input-field col s12">
+							<i class="cyan-text lighten-text-2 material-icons prefix">input</i>
+							<input id="name" type="text" class="nome teal-text">
+							<label for="name">Nome</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="cyan-text lighten-text-2 material-icons prefix">reorder</i>
+							<textarea id="description" class="desc materialize-textarea"></textarea>
+							<label for="description">Descrição</label>
+						</div>
+					</div>
+					<div class="row"></div>
+					<div class="row"></div>
+					<div class="row"></div>
+					<div class="row">
+						<div class="col s6 center-align">
+							<a href="#" class="btn-imagem"><img src="../img/imagem.png" alt="" height="150" width="150" /></a>
+						</div>
+						<div class="col s6 center-align">
+							<a href="#" class="btn-audio"><img src="../img/audio.png" alt="" height="150" width="150" /></a>
+						</div>
+					</div>
+				</div>
+		   	</form>
+			
+			<div class="caixa-loading"></div>
+		</div>
+	</div>
+		
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/materialize.min.js"></script>
+</body>
+
+</html>

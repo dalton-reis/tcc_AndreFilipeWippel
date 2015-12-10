@@ -1,0 +1,49 @@
+﻿/* Estilos comuns */
+.lista-itens { overflow:auto; height:100%; }
+
+/* Loading */
+.caixa-loading { display:none; position:fixed; z-index:1000; top:0; left:0; height:100%; width:100%;
+    			 background: rgba( 255, 255, 255, .8 ) 
+                			 url('http://i.stack.imgur.com/FhHRx.gif')
+                			 50% 50% 
+                			 no-repeat; }
+
+body.loading { overflow:hidden; }
+
+body.loading .caixa-loading { display:block; }
+
+/* Header */
+.header { height:60px; }
+
+/* Nome da tela */
+.nome-tela { height:100%; }
+
+/* Wrapper */
+.wrapper { height:690px; }
+
+/* Navegacao */
+.navegacao { height:100%; }
+.navegacao .ir { background-color:#00CC00; height:50%; }
+.navegacao .voltar { background-color:#FF0000; height:50%; }
+.navegacao .voltar-only { background-color:#FF0000; height:100%; }
+.navegacao a { height:100%; width:100%; }
+
+/* Area de controle */
+.area-controle { overflow:auto; height:100%; }
+.area-controle .foto { height:35%; }
+.area-controle .funcoes { height:55%; }
+
+/* Area de transicao */
+.area-transicao { border-left:5px #669999 double; overflow:auto; height:100%; }
+
+/* Prancha */
+.prancha { height:100%; }
+
+/* Imagem */
+.imagem { height:100%; }
+
+/* Formulario */
+.formulario { height:100%; }
+
+/* Historico de atividades */
+.hist { overflow:auto; }

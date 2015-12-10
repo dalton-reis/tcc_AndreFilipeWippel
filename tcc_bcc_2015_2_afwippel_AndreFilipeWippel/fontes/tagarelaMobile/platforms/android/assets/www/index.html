@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Tagarela</title>
+    
+	<link href="css/jquery.mobile-1.1.2.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>	
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/app2.css" rel="stylesheet" type="text/css" media="screen">   
+	
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.1.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/vendor/modernizr.js"></script>
+	<script src="js/db/database.js"></script>
+	<script src="js/db/sinc-dados.js"></script>
+    <script src="js/zera-globais.js"></script>
+	<script src="js/index.js"></script>
+</head>
+
+<body class="cyan lighten-2">
+	<div class="container">
+		<div class="header row z-depth-5 teal lighten-2" style="margin-bottom:0px">
+			<div class="col s12 nome-tela">
+        		<div>
+          			<h4 class="white-text center-align" style="margin-top:13px;font-family:Castellar">Login</h4>
+        		</div>
+      		</div>
+		</div>
+		<div class="wrapper row z-depth-5" style="margin-bottom:0px">
+		    <div class="navegacao col s2">
+		    	<div class="ir row" style="margin-bottom:0px">
+					<a href="#" class="waves-effect waves-white green btn-large logar hoverable z-depth-5"></a>
+				</div>	
+				<div class="voltar row" style="margin-bottom:0px">
+					<a href="#" class="waves-effect waves-white red btn-large sair hoverable z-depth-5"></a>
+				</div>
+		    </div>
+		    
+		   	<form class="formulario valign-wrapper col s10 light-blue lighten-5 black-text">
+				<div class="container" style="border:1px solid transparent">
+					<div class="row" style="margin-top:240px">
+						<div class="col s7">	
+							<div class="row">
+							   	<div class="input-field col s12">
+							   		<i class="cyan-text lighten-text-2 material-icons prefix">perm_identity</i>
+							   		<input id="user" type="text" class="teal-text usuario">
+							   		<label for="user">Usuário</label>
+							  	</div>
+							</div>
+					    	<div class="row"></div>
+					    	<div class="row">
+							   	<div class="input-field col s12">
+							   		<i class="cyan-text lighten-text-2 material-icons prefix">lock_outline</i>
+							   		<input id="password" type="password" class="teal-text senha">
+							   		<label for="password">Senha</label>
+							  	</div>
+							</div>
+						</div>
+						<div class="col s5">	
+							<div class="row" style="margin-left:50px;margin-top:20px">
+							   	<div class="col s12 center-align">
+									<a href="criar-usuario.html" class="criar-usuario"><img src="img/add-user.png" alt="" height="150" width="150" /></a>
+								</div>
+						  	</div>
+						</div>
+				  	</div>
+				</div>
+		   	</form>
+		</div>
+		
+		<div class="caixa-loading"></div>
+    </div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+----- UTILIZAÇÃO DO PHONEGAP -----
+
+Para instalar o phonegap CLI, siga estes passos:
+- Baixe e instale o Node.js. Após a instalação, você deve ser capaz de executar o comando 'npm' em seu prompt de comando (ou terminal).
+- Instale o phonegap através do comando 'npm install -g phonegap'
+
+Para criar um projeto PhoneGap (apenas um HeloWorld):
+- phonegap create hello com.example.hello HelloWorld
+
+Para buildar o projeto criado:
+- cd hello
+- phonegap build ios
+- phonegap build android
+
+Para testar a aplicação em um emulador:
+- phonegap emulate ios
+- phonegap emulate android
+
+Para executar a aplicação em um dispositivo concetado na porta usb:
+- phonegap run ios
+- phonegap run android
