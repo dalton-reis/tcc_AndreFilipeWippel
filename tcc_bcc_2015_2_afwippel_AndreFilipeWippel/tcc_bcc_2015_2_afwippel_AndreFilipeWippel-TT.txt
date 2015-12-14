@@ -1,3 +1,7 @@
+ATENÇÃO … existe duas versões de código … uma para roda na Web e outra para dispositivos móveis. No caso:
+O código da versão ios e Android estão na pasta tagarelaMobile.
+E o código da aplicação web está ficou na pasta tagarelaWeb.
+
 ----- UTILIZA«√O DO PHONEGAP -----
 
 Para instalar o phonegap CLI, siga estes passos:
